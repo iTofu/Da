@@ -317,7 +317,7 @@ open class Da: UIView {
         
         self.lines.removeAll()
         
-        for (index, button) in self.buttons.enumerated() {
+        for (_, button) in self.buttons.enumerated() {
             let line = self.generateLine()
             self.lines.append(line)
             self.buttonsContainer.addSubview(line)
