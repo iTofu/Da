@@ -1,0 +1,6 @@
+framework module Da {
+  umbrella header "Da-umbrella.h"
+
+  export *
+  module * { export * }
+}
