@@ -7,7 +7,7 @@
 //
 //  Da
 //  https://github.com/iTofu/Da
-//  V 0.0.1
+//  V 0.0.2
 //
 
 import UIKit

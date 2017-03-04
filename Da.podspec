@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Da"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "🌟 Naughty flexible alert view. Like QQ's. Support: https://LeoDev.me"
   s.homepage     = "https://github.com/iTofu/Da"
   s.license      = "MIT"
