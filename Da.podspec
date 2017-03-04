@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/iTofu/Da"
   s.license      = "MIT"
   s.author             = { "Leo" => "devtip@163.com" }
-  s.social_media_url   = "http://LeoDev.me"
+  s.social_media_url   = "https://LeoDev.me"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/iTofu/Da.git", :tag => s.version }
   s.source_files = "Sources/*.swift"
