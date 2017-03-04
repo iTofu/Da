@@ -89,7 +89,8 @@ If you prefer not to use the aforementioned dependency manager, you can integrat
 * Detailed:
 
   ```swift
-  func showAlertDetailedly {
+  func showAlertDetailedly() {
+  
       Da.hairColor = UIColor.orange
       let da = Da(title: "温馨提示",
                   message: "您的账号已在其他设备登录，请您注意账号安全。",
