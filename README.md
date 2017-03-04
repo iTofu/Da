@@ -6,7 +6,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/Da.svg)](http://cocoadocs.org/docsets/Da)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://LeoDev.me)
 
-🌟 Naughty flexible alert view above the navigation bar. Like QQ's.
+🌟 Naughty flexible alert view above the navigation bar, like QQ's. Da is a part of [DaXia](https://github.com/iTofu/DaXia).
 
 <!-- ![Da](https://raw.githubusercontent.com/iTofu/Da/master/DaDemoImage/DaDemoImage.png) -->
 
@@ -84,8 +84,12 @@ If you prefer not to use the aforementioned dependency manager, you can integrat
                    cancelButtonTitle: "退出",
                    otherButtonTitles: nil)
   }
+  ```
 
-  func showAlertDetail {
+* Detailed:
+
+  ```swift
+  func showAlertDetailedly {
       Da.hairColor = UIColor.orange
       let da = Da(title: "温馨提示",
                   message: "您的账号已在其他设备登录，请您注意账号安全。",
@@ -110,6 +114,8 @@ If you prefer not to use the aforementioned dependency manager, you can integrat
       }
       da.show()
   }
+
+  // And more see Da.swift...
   ```
 
 * Resources:
@@ -142,11 +148,11 @@ If you prefer not to use the aforementioned dependency manager, you can integrat
 
 * Blog: https://LeoDev.me
 
-* Friendly sponsorship with Alipay or Wechat Pay, thank you!
+* Friendly sponsorship with [Alipay or Wechat Pay](https://cdnqiniu.leodev.me/paid_to_leo.png), thank you!
 
   ![Leo](https://cdnqiniu.leodev.me/paid_to_leo.png)
 
 
 ## License
 
-Xia is released under the [MIT License](https://github.com/iTofu/Da/blob/master/LICENSE).
+Da is released under the [MIT License](https://github.com/iTofu/Da/blob/master/LICENSE).
