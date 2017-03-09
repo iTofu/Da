@@ -38,7 +38,7 @@ open class Da: UIView {
     private var title:             String?
     private var message:           String?
     private var cancelButtonTitle: String!
-    private var otherButtonTitles: [String] = []
+    public var otherButtonTitles: [String] = []
     
     private var titleFont:   UIFont! = UIFont.systemFont(ofSize: 20.0)
     private var messageFont: UIFont! = UIFont.systemFont(ofSize: 16.0)
