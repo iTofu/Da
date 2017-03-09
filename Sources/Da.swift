@@ -27,6 +27,8 @@ open class Da: UIView {
         }
     }
     
+    public var keyWindow: UIWindow? = UIApplication.shared.keyWindow
+    
     public var clickedHandle:      DaClickedHandler
     public var willPresentHanlder: DaPresentHandler
     public var didPresentHanlder:  DaPresentHandler
@@ -117,11 +119,11 @@ open class Da: UIView {
         self.message             = message
         self.hairColor           = hairColor
         self.cancelButtonTitle   = cancelButtonTitle
-        if let aFirstButtonTitle = firstButtonTitle {
-            self.otherButtonTitles.append(aFirstButtonTitle)
+        if let firstButtonTitle = firstButtonTitle {
+            self.otherButtonTitles.append(firstButtonTitle)
         }
-        if let aMoreButtonTitles = moreButtonTitles {
-            self.otherButtonTitles.append(contentsOf: aMoreButtonTitles)
+        if let moreButtonTitles = moreButtonTitles {
+            self.otherButtonTitles.append(contentsOf: moreButtonTitles)
         }
 
         self.clickedHandle      = clickedHandler
@@ -137,7 +139,7 @@ open class Da: UIView {
             print("Error: This Da instance is showing now!")
             return
         }
-        guard let keyWindow = UIApplication.shared.keyWindow else { return }
+        guard let keyWindow = self.keyWindow else { return }
         
         self.showing = true
         
