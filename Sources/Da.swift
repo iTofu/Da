@@ -13,9 +13,10 @@
 import UIKit
 import SnapKit
 
+public typealias DaPresentHandler = ((_ da: Da) -> Void)?
+public typealias DaClickedHandler = ((_ da: Da, _ buttonIndex: NSInteger) -> Void)?
+
 open class Da: UIView {
-    public typealias DaPresentHandler = ((_ da: Da) -> Void)?
-    public typealias DaClickedHandler = ((_ da: Da, _ buttonIndex: NSInteger) -> Void)?
     
     public static var hairColor: UIColor! = UIColor(daHexString: "#1EB8F3")
     private var hairColor: UIColor!
