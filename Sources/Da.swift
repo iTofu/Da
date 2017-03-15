@@ -7,7 +7,7 @@
 //
 //  Da
 //  https://github.com/iTofu/Da
-//  V 0.0.2
+//  V 0.0.3
 //
 
 import UIKit
@@ -18,7 +18,11 @@ public typealias DaClickedHandler = ((_ da: Da, _ buttonIndex: NSInteger) -> Voi
 
 open class Da: UIView {
     
-    public static var hairColor: UIColor! = UIColor(daHexString: "#1EB8F3")
+    public static var hairColor: UIColor  = UIColor(daHexString: "#1EB8F3")
+    public static var titleFont: UIFont   = UIFont.systemFont(ofSize: 20.0)
+    public static var messageFont: UIFont = UIFont.systemFont(ofSize: 16.0)
+    public static var buttonFont: UIFont  = UIFont.systemFont(ofSize: 18.0)
+    
     private var hairColor: UIColor!
     
     public var cancelButtonIndex: Int {
@@ -42,11 +46,7 @@ open class Da: UIView {
     private var cancelButtonTitle: String!
     public var otherButtonTitles: [String] = []
     
-    private var titleFont:   UIFont! = UIFont.systemFont(ofSize: 20.0)
-    private var messageFont: UIFont! = UIFont.systemFont(ofSize: 16.0)
-    private var buttonFont:  UIFont! = UIFont.systemFont(ofSize: 18.0)
-    
-    public var destructiveButtonColor: UIColor! = UIColor(daHexString: "#FF0A0A") {
+    public var destructiveButtonColor: UIColor = UIColor(daHexString: "#FF0A0A") {
         didSet {
             self.updateDestructive()
         }
@@ -175,7 +175,7 @@ open class Da: UIView {
         }
         
         self.titleLabel = UILabel()
-        self.titleLabel.font = self.titleFont
+        self.titleLabel.font = Da.titleFont
         self.titleLabel.text = self.title
         self.titleLabel.textColor = UIColor(daHexString: "#333333")
         self.titleLabel.textAlignment = .center
@@ -195,7 +195,7 @@ open class Da: UIView {
         }
         
         self.messageLabel = UILabel()
-        self.messageLabel.font = self.messageFont
+        self.messageLabel.font = Da.messageFont
         self.messageLabel.text = self.message
         self.messageLabel.textColor = UIColor(daHexString: "#333333")
         self.messageLabel.textAlignment = .center
@@ -262,7 +262,7 @@ open class Da: UIView {
     private func generateButton(title: String?, tag: Int) -> UIButton {
         let button = UIButton(type: .custom)
         button.tag = tag
-        button.titleLabel?.font = self.buttonFont
+        button.titleLabel?.font = Da.buttonFont
         button.setTitle(title, for: .normal)
         button.setBackgroundImage(UIImage(daColor: UIColor(daHexString: "#EAEAEA")), for: .highlighted)
         button.addTarget(self, action: #selector(self.onButtonClicked), for: .touchUpInside)

@@ -133,6 +133,16 @@ If you prefer not to use the aforementioned dependency manager, you can integrat
 
 ## ChangeLog
 
+### V 0.0.3
+
+* Public some properties:
+
+  ```swift
+  public static var titleFont: UIFont   = UIFont.systemFont(ofSize: 20.0)
+  public static var messageFont: UIFont = UIFont.systemFont(ofSize: 16.0)
+  public static var buttonFont: UIFont  = UIFont.systemFont(ofSize: 18.0)
+  ```
+
 ### V 0.0.2
 
 * Improve.

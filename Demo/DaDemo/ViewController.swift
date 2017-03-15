@@ -41,7 +41,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onAlert3Buttons() {
-        Da.hairColor = UIColor.orange
+        Da.hairColor = .orange
+        Da.titleFont = UIFont.boldSystemFont(ofSize: 18.0)
         let da = Da(title: "温馨提示",
                     message: "您的账号已在其他设备登录，请您注意账号安全。",
                     cancelButtonTitle: "退出",
