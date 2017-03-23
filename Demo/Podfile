@@ -6,8 +6,6 @@ target 'DaDemo' do
   use_frameworks!
 
   # Pods for DaDemo
-  pod 'SnapKit', '~> 3.2.0'
-  
   pod 'Da', :path => '../'
 
   target 'DaDemoTests' do
