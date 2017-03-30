@@ -148,7 +148,6 @@ open class Da: UIView {
         self.didDismissHandler  = didDismissHandler
     }
     
-    @discardableResult
     private func setupMainView() {
         guard !self.showing else {
             print("Error: This Da instance is showing now!")
