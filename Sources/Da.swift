@@ -3,12 +3,27 @@
 //  Da
 //
 //  Created by Leo on 03/03/2017.
-//  Copyright © 2017 Leo. All rights reserved.
 //
-//  Da
-//  https://github.com/iTofu/Da
-//  V 0.0.3
+//  Copyright (c) 2017 Leo <leodaxia@gmail.com>
 //
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+
 
 import UIKit
 import SnapKit
@@ -125,7 +140,7 @@ open class Da: UIView {
         if let moreButtonTitles = moreButtonTitles {
             self.otherButtonTitles.append(contentsOf: moreButtonTitles)
         }
-
+        
         self.clickedHandle      = clickedHandler
         self.willPresentHanlder = willPresentHanlder
         self.didPresentHanlder  = didPresentHanlder
@@ -179,12 +194,13 @@ open class Da: UIView {
         self.titleLabel.text = self.title
         self.titleLabel.textColor = UIColor(daHexString: "#333333")
         self.titleLabel.textAlignment = .center
+        self.titleLabel.numberOfLines = 0
         container.addSubview(self.titleLabel)
         var titleH: CGFloat = 0
         var msgTop: CGFloat = self.titleTop
         if self.hasTitle {
-            let titleSize = NSString(string: self.title!).size(attributes: [NSFontAttributeName: self.titleLabel.font])
-            titleH = max(titleSize.height + 2.0, titleH)
+            let titleSize = NSString(string: self.title!).boundingRect(with: CGSize(width: containerW - 30.0, height: .greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: self.titleLabel.font], context: nil)
+            titleH = titleSize.height + 2.0
             msgTop += titleH + 20.0
         }
         self.titleLabel.snp.makeConstraints { (make) in
@@ -204,7 +220,7 @@ open class Da: UIView {
         var msgH: CGFloat = 0
         if self.hasMessage {
             let titleSize = NSString(string: self.message!).boundingRect(with: CGSize(width: containerW - 30.0, height: .greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: self.messageLabel.font], context: nil)
-            msgH = max(titleSize.height + 2.0, msgH)
+            msgH = titleSize.height + 2.0
         }
         self.messageLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(15.0)
@@ -292,8 +308,8 @@ open class Da: UIView {
         var titleH: CGFloat = 0
         var msgTop: CGFloat = self.titleTop
         if self.hasTitle {
-            let titleSize = NSString(string: self.title!).size(attributes: [NSFontAttributeName: self.titleLabel.font])
-            titleH = max(titleSize.height + 2.0, titleH)
+            let titleSize = NSString(string: self.title!).boundingRect(with: CGSize(width: containerW - 30.0, height: .greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: self.titleLabel.font], context: nil)
+            titleH = titleSize.height + 2.0
             msgTop += titleH + 17.0
         }
         self.titleLabel.snp.updateConstraints { (make) in
@@ -304,7 +320,7 @@ open class Da: UIView {
         var msgH: CGFloat = 0
         if self.hasMessage {
             let titleSize = NSString(string: self.message!).boundingRect(with: CGSize(width: containerW - 30.0, height: .greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: self.messageLabel.font], context: nil)
-            msgH = max(titleSize.height + 2.0, msgH)
+            msgH = titleSize.height + 2.0
         }
         self.messageLabel.snp.updateConstraints { (make) in
             make.top.equalToSuperview().offset(msgTop)
